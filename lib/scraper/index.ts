@@ -35,7 +35,8 @@ export async function scrapeAmazonProduct(url: string) {
       $('.a.size.base.a-color-price'),
       $('.a-button-selected .a-color-base'),
     );
-
+    const stars=$('.a-size-base a-color-base');
+    const reviews=$('.a-size-base');
     const originalPrice = extractPrice(
       $('#priceblock_ourprice'),
       $('.a-price.a-text-price span.a-offscreen'),
@@ -69,8 +70,8 @@ export async function scrapeAmazonProduct(url: string) {
       priceHistory: [],
       discountRate: Number(discountRate),
       category: 'category',
-      reviewsCount:100,
-      stars: 4.5,
+      reviewsCount:reviews,
+      stars: stars,
       isOutOfStock: outOfStock,
       description,
       lowestPrice: Number(currentPrice) || Number(originalPrice),
