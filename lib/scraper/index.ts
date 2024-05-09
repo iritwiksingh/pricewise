@@ -74,8 +74,8 @@ export async function scrapeAmazonProduct(url: string) {
       isOutOfStock: outOfStock,
       description,
       lowestPrice: Number(currentPrice) || Number(originalPrice),
-      highestPrice: Number(originalPrice) || Number(currentPrice),
-      averagePrice: Number(currentPrice) || Number(originalPrice),
+      highestPrice: Number(originalPrice) ,
+      averagePrice: (Number(currentPrice) +Number(originalPrice))/2,
     }
 
     return data;
